@@ -17,7 +17,7 @@ class Engine {
     const cases = this.config.cases;
     const env = this.config.environment;
 
-    const fetcher = fetcherFactory(env.leftBaseUrl, env.rightBaseUrl);
+    const fetcher = fetcherFactory(this.config);
     this.formatter.info(`${enter_separator} start mirror task ${this.config.name} with ${cases.length} cases`);
     
     for (let testcase of cases) {

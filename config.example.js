@@ -4,7 +4,9 @@ module.exports = {
   name: 'little pomelo',
   environment: {
     leftBaseUrl: 'http://localhost:8090/',
-    rightBaseUrl: 'http://localhost:1699/'
+    rightBaseUrl: 'http://localhost:1699/',
+    headers: {},
+    cookies: ''
   },
   formattors: [
     {
