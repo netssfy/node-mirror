@@ -6,6 +6,15 @@ module.exports = {
     leftBaseUrl: 'http://localhost:8090/',
     rightBaseUrl: 'http://localhost:1699/'
   },
+  formattors: [
+    {
+      path: './core/formattor/console'
+    },
+    {
+      path: './core/formattor/file',
+      output: './output.txt'
+    }
+  ],
   cases: [{
     name:'1',
     method: 'get',

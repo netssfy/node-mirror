@@ -24,7 +24,7 @@ class Printer {
       this[func] = function() {
         for (let formattor of this.formattors) {
           if (formattor[func])
-            formattor[func](arguments);
+            formattor[func].apply(formattor, arguments);
           else
             throw `formattor ${formattor.name} has no ${func} function`;
         }
