@@ -1,0 +1,32 @@
+{
+  "name": "node-mirror",
+  "version": "0.0.1",
+  "description": "a test tool for comparison 2 results",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/netssfy/node-mirror.git"
+  },
+  "keywords": [
+    "node",
+    "test",
+    "comparison"
+  ],
+  "author": "netssfy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/netssfy/node-mirror/issues"
+  },
+  "homepage": "https://github.com/netssfy/node-mirror#readme",
+  "dependencies": {
+    "co": "^4.6.0",
+    "deep-diff": "^0.3.4",
+    "lodash": "^4.17.4",
+    "request": "^2.80.0",
+    "request-promise": "^4.1.1",
+    "winston": "^2.3.1"
+  }
+}
