@@ -1,6 +1,6 @@
 'use strict';
 
-const Formattor = require('./formattor');
+const Formatter = require('./formatter');
 const fetcherFactory = require('./fetcher');
 const compare = require('./comparator/json');
 
@@ -10,7 +10,7 @@ const exit_separator = '<<<<<<<<<<<<<<<<<<<<';
 class Engine {
   constructor(config) {
     this.config = config;
-    this.formatter = Formattor(this.config);
+    this.formatter = Formatter(this.config);
   }
 
   *start() {

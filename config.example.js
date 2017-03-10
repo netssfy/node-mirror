@@ -8,12 +8,12 @@ module.exports = {
     headers: {},
     cookies: ''
   },
-  formattors: [
+  formatters: [
     {
-      path: './core/formattor/console'
+      path: './core/formatter/console'
     },
     {
-      path: './core/formattor/file',
+      path: './core/formatter/file',
       output: './output.txt'
     }
   ],
