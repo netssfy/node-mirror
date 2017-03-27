@@ -25,6 +25,12 @@ class Engine {
       
       try {
         let data = yield fetcher(testcase);
+        //output short sample data for user inspection
+        let leftStr = JSON.stringify(data.left);
+        let rightStr = JSON.stringify(data.right);
+        this.formatter.info(`  left data len = ${leftStr.length}, segment = ${leftStr.substr(0, 120)}`);
+        this.formatter.info(`  right data len = ${rightStr.length}, segment = ${rightStr.substr(0, 120)}`);
+
         let result = compare(data.left, data.right);
         if (result.equal) {
           this.formatter.info(`  result is equal! ^_^`);
