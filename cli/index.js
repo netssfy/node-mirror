@@ -25,6 +25,6 @@ do {
   co(engine.start())
   .then(function() {
     console.log('bye bye!');
+    process.exit(0);
   });
 } while(false);
-

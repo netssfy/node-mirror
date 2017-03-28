@@ -21,7 +21,7 @@ class Engine {
     this.formatter.info(`${enter_separator} start mirror task ${this.config.name} with ${cases.length} cases`);
     
     for (let testcase of cases) {
-      this.formatter.info(`  ${enter_separator} start case ${testcase.name}`);
+      this.formatter.info(`  ${enter_separator} start case ${testcase.name} path = ${testcase.path}`);
       
       try {
         let data = yield fetcher(testcase);

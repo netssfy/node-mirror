@@ -31,7 +31,7 @@ function send(baseUrl, path, method, headers, cookies) {
   j.setCookie(cookies || '', baseUrl);
 
   const options = {
-    url: url.resolve(baseUrl, path),
+    url: url.resolve(baseUrl, encodeURI(path)),
     method: method,
     headers: headers,
     jar: j,
