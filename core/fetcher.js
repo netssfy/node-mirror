@@ -12,11 +12,11 @@ function factory(config) {
   return function* fetch(testcase) {
     //获取left结果
     const leftPath = testcase.leftPath ? testcase.leftPath : testcase.path;
-    const pLeft = send(leftBaseUrl, leftPath, testcase.method, testcase.headers || globalHeaders, testcase.cookies || globalCookies);
+    const pLeft = send(leftBaseUrl, leftPath, testcase.method, testcase.headers || globalHeaders, testcase.cookies || globalCookies, testcase.body);
 
     //获取right结果
     const rightPath = testcase.rightPath ? testcase.rightPath : testcase.path;
-    const pRight = send(rightBaseUrl, rightPath, testcase.method, testcase.headers || globalHeaders, testcase.cookies || globalCookies);
+    const pRight = send(rightBaseUrl, rightPath, testcase.method, testcase.headers || globalHeaders, testcase.cookies || globalCookies, testcase.body);
 
     const results = yield Promise.all([pLeft, pRight]);
     return {
@@ -26,7 +26,7 @@ function factory(config) {
   };
 }
 
-function send(baseUrl, path, method, headers, cookies) {
+function send(baseUrl, path, method, headers, cookies, body) {
   const j = request.jar();
   j.setCookie(cookies || '', baseUrl);
 
@@ -37,6 +37,9 @@ function send(baseUrl, path, method, headers, cookies) {
     jar: j,
     json: true
   }
+
+  if (body) 
+    options.body = body;
 
   return request(options);
 }
