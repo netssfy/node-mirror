@@ -34,7 +34,8 @@ module.exports = {
     leftPath: 'pomelo',
     rightPath: 'pomelo',
     cookies: '',
-    headers: {}
+    headers: {},
+    body:{}
   }]
 };
 ```
